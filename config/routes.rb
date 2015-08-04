@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root to: 'profiles#index'
+  get 'comments', to: 'profiles#index'
+  resources :profiles do
+    resources :comments
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

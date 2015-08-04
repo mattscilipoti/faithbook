@@ -1,3 +1,63 @@
+body {
+  background: white;
+  color: black;
+  font-family: helvetica;
+  font-weight: 100;
+  margin: 20px;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border_bottom: 1px solid black;
+  margin: 0 auto;
+}
+
+.comments {
+  display: block;
+  padding: 20px;
+  width: 25%;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: block;
+  padding: 20px;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 1px solid black;
+}
+
+.comment_date_time {
+  font-size: 12px;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  padding-left: 0px;
+}
+
+img {
+  display: block;
+  height: 150px;
+  width: 150px;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

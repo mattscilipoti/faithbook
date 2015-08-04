@@ -1,0 +1,39 @@
+<div class="content">
+  <h2>
+    <%= @profile.full_name %> <%= link_to "edit profile", edit_profile_path(@profile) %>
+  </h2>
+  <%= image_tag(@profile.photo_url) %>
+  <p>Born:
+    <%= @profile.birth_date %>
+  </p>
+  <p>Education:
+    <%= @profile.education %>
+  </p>
+  <p>About <%= @profile.full_name %>:
+    <%= @profile.about_me %>
+  </p>
+</div>
+
+<div class="comments">
+  <h2>
+    Comments
+  </h2>
+
+<ul>
+  <% @profile.comments.each do |comment| %>
+      <li>
+        <%= comment.full_name %> <%= link_to "add comment", new_profile_comment_path(@profile, comment) %>
+        <%= image_tag(comment.photo_url) %>
+        <div class="comment_date_time">
+          <%= comment.date_time %>
+        </div>
+        <p>
+          <%= comment.content %>
+        </p>
+        <p>
+          <%= link_to "edit comment", edit_profile_comment_path(@profile, comment) %>
+        </p>
+      </li>
+      <% end %>
+    </ul>
+  </div>

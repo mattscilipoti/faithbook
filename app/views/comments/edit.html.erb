@@ -1,0 +1,9 @@
+<div class="content">
+  <h2>
+    Edit your comment
+  </h2>
+
+  <%= render partial: "form" %>
+
+  <%= link_to "Delete Comment", profile_comment_path(@profile, @comment), method: :delete, class: "delete" %>
+</div>
