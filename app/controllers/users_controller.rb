@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     else
       message = "welcome, #{@user.username}!"
     end
-    redirect_to action: :sign_in
+    redirect_to root_url
     flash[:notice] = message
   end
 
