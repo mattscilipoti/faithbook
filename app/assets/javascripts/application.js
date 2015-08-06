@@ -14,14 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function() {
-  var prayers = localStorage.getItem("numClicks")
-  document.getElementById("prayer_counter").innerHTML = prayers;
-})
-
 function sendPrayer() {
   prayers = parseInt(document.getElementById("prayer_counter").innerHTML);
   prayers += 1;
-  localStorage.setItem("numClicks", prayers);
   document.getElementById("prayer_counter").innerHTML = prayers;
 }
