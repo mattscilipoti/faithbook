@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:profile_id])
-    @comment = @post.comments.find(params[:id])
+    @comment = @profile.comments.find(params[:id])
   end
 
   def update
@@ -35,5 +35,8 @@ class CommentsController < ApplicationController
 
     redirect_to profile_path(@profile)
   end
-
+  private
+  def comment_params
+    params.require(:comment).permit(:full_name, :photo_url, :date_time, :content)
+  end
 end
