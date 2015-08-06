@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate
-  
+
   def sign_up
   end
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     if !@user
       message = "No account exists with that username."
     elsif !BCrypt::Password.new(@user.password_digest).is_password?(params[:password])
-    message = "Incorrect password."
+      message = "Incorrect password."
     else
       message = "welcome, #{@user.username}!"
       cookies[:username] = @user.username
