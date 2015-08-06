@@ -12,6 +12,14 @@
   <p>About <%= @profile.full_name %>:
     <%= @profile.about_me %>
   </p>
+  <span id="prayer_counter">
+    0
+  </span> people are praying for <%= @profile.full_name %>
+  <p>
+    <button type="button" onclick="sendPrayer()">
+      Send <%= @profile.full_name %> a prayer!
+    </button>
+  </p>
 </div>
 
 <div class="comments">

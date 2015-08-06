@@ -20,8 +20,10 @@
       </p>
 
       <a href="/">home</a> |
-      <a href="/sign_up">sign up</a> |
-      <a href="/sign_out">sign out</a>
+      <a href="/sign_up">sign up</a>
+      <% if session[:user] %>
+        <a href="/sign_out"> | <%= session[:user]["username"] %>:sign out</a>
+      <%end%>
       <p class="notice">
         <%= flash[:notice] %>
       </p>

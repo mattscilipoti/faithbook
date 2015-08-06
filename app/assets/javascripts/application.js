@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+function sendPrayer() {
+  console.log(document.getElementById("prayer_counter"))
+  prayers = parseInt(document.getElementById("prayer_counter").innerHTML);
+  prayers += 1;
+  console.log(prayers)
+  document.getElementById("prayer_counter").innerHTML = prayers;
+}
