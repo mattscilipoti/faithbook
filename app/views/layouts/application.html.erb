@@ -10,14 +10,28 @@
   <header>
     <h2>fai&#10013;hbook</h2>
     <p>The Christian social network.</p>
+    <nav>
+      <p>
+        <%= form_tag("/sign_in", method: "post") do %>
+          <input type="text" name="username" placeholder="username" />
+          <input type="password" name="password" placeholder="password" />
+          <input type="submit" value="Sign In" />
+        <% end %>
+      </p>
+
+      <a href="/">home</a> |
+      <a href="/sign_up">sign up</a> |
+      <a href="/sign_out">sign out</a>
+      <p class="notice">
+        <%= flash[:notice] %>
+      </p>
+    </nav>
   </header>
 
   <main>
-
   </main>
 
   <footer>
-
   </footer>
 
 <%= yield %>

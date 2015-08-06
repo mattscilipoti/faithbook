@@ -5,7 +5,6 @@ class CreateComments < ActiveRecord::Migration
       t.string :date_time
       t.string :content
       t.string :photo_url
-      t.references :profile, index: true, foreign_key: true
     end
   end
 end

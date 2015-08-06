@@ -16,13 +16,13 @@
 
 <div class="comments">
   <h2>
-    Comments
+    Comments <%= link_to "add comment", new_profile_comment_path(@profile, @comment) %>
   </h2>
 
 <ul>
   <% @profile.comments.each do |comment| %>
       <li>
-        <%= comment.full_name %> <%= link_to "add comment", new_profile_comment_path(@profile, comment) %>
+        <%= comment.full_name %>
         <%= image_tag(comment.photo_url) %>
         <div class="comment_date_time">
           <%= comment.date_time %>

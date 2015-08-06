@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803215032) do
+ActiveRecord::Schema.define(version: 20150804211149) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.string  "full_name"
@@ -20,8 +23,6 @@ ActiveRecord::Schema.define(version: 20150803215032) do
     t.string  "photo_url"
     t.integer "profile_id"
   end
-
-  add_index "comments", ["profile_id"], name: "index_comments_on_profile_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string "full_name"
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150803215032) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
   end
 
 end
