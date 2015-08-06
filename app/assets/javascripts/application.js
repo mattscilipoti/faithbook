@@ -12,15 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
-
+$(function() {
+  var prayers = localStorage.getItem("numClicks")
+  document.getElementById("prayer_counter").innerHTML = prayers;
+})
 
 function sendPrayer() {
-  console.log(document.getElementById("prayer_counter"))
   prayers = parseInt(document.getElementById("prayer_counter").innerHTML);
   prayers += 1;
-  console.log(prayers)
+  localStorage.setItem("numClicks", prayers);
   document.getElementById("prayer_counter").innerHTML = prayers;
 }
