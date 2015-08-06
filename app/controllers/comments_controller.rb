@@ -26,6 +26,8 @@ class CommentsController < ApplicationController
     @profile = Profile.find(params[:profile_id])
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
+
+    redirect_to profile_path(@profile)
   end
 
   def destroy
