@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
   def new
     @profile = Profile.find(params[:profile_id])
+    # mms: @profile.comments.build will associate the new comment with the profile
     @comment = Comment.new
   end
 
@@ -13,8 +14,9 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comment = Comment.find(params[:id])
     @profile = Profile.find(params[:profile_id])
+    # mms: continue to use the association, like the other actions do.
+    @comment = @profile.comments.find(params[:id])
   end
 
   def edit
@@ -24,6 +26,7 @@ class CommentsController < ApplicationController
 
   def update
     @profile = Profile.find(params[:profile_id])
+    # mms: here too.
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
 

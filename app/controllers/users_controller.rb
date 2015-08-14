@@ -32,6 +32,8 @@ class UsersController < ApplicationController
     else
       message = "welcome, #{@user.username}!"
       cookies[:username] = @user.username
+      # mms: recommend you only save @user.id to the session.
+      # mms:    It's much smaller and contains all the info you need to find the user again:  User.find(session[:user_id])
       session[:user] = @user
     end
     redirect_to root_url

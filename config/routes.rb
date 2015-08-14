@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'profiles#index'
+  # mms:  this is a little confusing - the "/comments" url takes me to the index of profiles?
   get 'comments', to: 'profiles#index'
   resources :profiles do
     resources :comments

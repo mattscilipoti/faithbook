@@ -12,6 +12,7 @@
     <p>The Christian social network.</p>
     <nav>
       <p>
+        <!-- mms: do you want to show this ALL the time, or only when we are not signed in -->
         <%= form_tag("/sign_in", method: "post") do %>
           <input type="text" name="username" placeholder="username" />
           <input type="password" name="password" placeholder="password" />
@@ -31,11 +32,13 @@
   </header>
 
   <main>
+    <!-- mms: recommend `yield` goes here -->
   </main>
 
   <footer>
   </footer>
-
+<!-- mms: This yields the contents of each view here.  Do you really want this after your footer? -->
+<!-- mms:   Granted, this mistake would be more obvious if you actually had content in the footer :)  -->
 <%= yield %>
 
 </body>

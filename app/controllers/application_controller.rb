@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
   def authenticate
     if !session[:user]
-
+      # mms:  What should we do if we aren't signed in?
     end
   end
 end
